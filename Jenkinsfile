@@ -9,14 +9,14 @@ pipeline{
 				echo'building the appilication..'
 			}
 		}
-	stage("test"){
+		stage("test"){
 
 			steps {
 				echo'testing the appilication..'
 			}
 		}
 
-	stage("deploy"){
+		stage("deploy"){
 
 			steps {
 				echo'deploying the appilication..'
