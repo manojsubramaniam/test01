@@ -18,7 +18,7 @@ pipeline{
 		stage("test"){
 		      when {
 			      expression{
-				env.BRANCH_NAME == 'main'
+				params.exexuteTests
 			      }
 			}
 
@@ -30,6 +30,7 @@ pipeline{
 		stage("deploy"){
 			steps {
 				echo'deploying the appilication..'
+				echo"deploying version ${VERSION}"
 			}
 		}
 	}
