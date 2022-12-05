@@ -12,7 +12,7 @@ pipeline{
 		stage("test"){
 		      when {
 			      expression{
-				env.BRANCH_NAME == 'mano'
+				BRANCH_NAME == 'main'
 			      }
 			}
 
