@@ -8,7 +8,7 @@ pipeline{
 	stages{
 		stage("Branch"){
 			steps {
-				echo'${Branch} is the branch"
+				echo'${Branch} is the branch'
 			}
 		}
 		stage("build docker image"){
