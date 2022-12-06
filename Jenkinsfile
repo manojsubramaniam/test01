@@ -1,29 +1,30 @@
 pipeline{
 	agent any
 	parameters {
-		string(name: 'Project', defaultValue: 'sample project tuesday', description: 'sample project for today')
-		choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: 'select the version')
+		//string(name: 'Project', defaultValue: 'sample project tuesday', description: 'sample project for today')
+		choice(name: 'Branch', choices: ['1.1.0', '1.2.0', '1.3.0'], description: 'select the branch')
 	}
-
+ 
 	stages{
-
-		stage("build"){
-
+		stage("Branch"){
 			steps {
-				echo'building the appilication..'
-				echo"building version ${VERSION}"
+				echo'${Branch} is the branch"
 			}
 		}
-		stage("test"){
+		stage("build docker image"){
 		     	steps {
-				echo'testing the appilication..'
+				echo'building docker image..'
 			}
 		}
 
-		stage("deploy"){
+		stage("docker container"){
 			steps {
-				echo'deploying the appilication..'
-				echo"deploying version ${VERSION}"
+				echo'running docker image into container..'
+			}
+		}
+		stage("restart nginx"){
+			steps {
+				echo'restarting nginx..'
 			}
 		}
 	}
