@@ -3,10 +3,13 @@ pipeline{
 	parameters {
 		//string(name: 'Project', defaultValue: 'sample project tuesday', description: 'sample project for today')
 		choice(name: 'Branch', choices: ['main', 'branch01', 'branch02'], description: 'select the branch')
-		git branch: 'main', credentialsId: '9c2554ea-60d2-4fc7-8612-fb72139b3b89', url: 'https://github.com/manojsubramaniam/test01.git'
+		
 	}
  
 	stages{
+		stage('Checkout') {
+      			 git branch: 'main', credentialsId: '9c2554ea-60d2-4fc7-8612-fb72139b3b89', url: 'https://github.com/manojsubramaniam/test01.git'
+   		}
 		stage("Branch"){
 			steps {
 				echo'${Branch} is the branch'
