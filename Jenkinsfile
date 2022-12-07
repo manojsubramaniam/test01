@@ -9,7 +9,7 @@ pipeline{
 	stages{
 		stage('Checkout') {
 			steps{
-				git branch: '${Branch}', credentialsId: '9c2554ea-60d2-4fc7-8612-fb72139b3b89', url: 'https://github.com/manojsubramaniam/test01.git'
+				git branch: '${'Branch'}', credentialsId: '9c2554ea-60d2-4fc7-8612-fb72139b3b89', url: 'https://github.com/manojsubramaniam/test01.git'
    		
 			}
 		}
