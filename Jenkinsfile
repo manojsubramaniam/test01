@@ -5,7 +5,7 @@ pipeline{
 	//	 args '-v $/var/lib/jenkins/workspace/docker-ansible:/home/ubuntu'
 	 //    }
 	//}
-	agent {
+	agent any {
 	  dockerfile {
 	    customWorkspace '/home/ubuntu'
 	    dir '/var/lib/jenkins/workspace/Jenkinsfile'
@@ -32,6 +32,7 @@ pipeline{
    		
 			}
 		}
+		
 		stage("build docker image"){
 		     	steps {
 				sh 'Jenkinsfile -B clean verify'
