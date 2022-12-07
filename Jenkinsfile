@@ -13,11 +13,6 @@ pipeline{
    		
 			}
 		}
-		stage("Branch"){
-			steps {
-				echo'${Branch} is the branch'
-			}
-		}
 		stage("build docker image"){
 		     	steps {
 				echo'building docker image..'
