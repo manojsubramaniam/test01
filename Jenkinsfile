@@ -8,8 +8,11 @@ pipeline{
  
 	stages{
 		stage('Checkout') {
+			steps{
       			 git branch: 'main', credentialsId: '9c2554ea-60d2-4fc7-8612-fb72139b3b89', url: 'https://github.com/manojsubramaniam/test01.git'
-   		}
+   		
+			}
+		}
 		stage("Branch"){
 			steps {
 				echo'${Branch} is the branch'
