@@ -1,9 +1,9 @@
 pipeline{
-	agent any{
-		docker {
-			 image 'maven:3.8.1-adoptopenjdk-11'
-			 args '-v $/var/lib/jenkins/workspace/docker-ansible:/home/ubuntu'
-        	}
+	agent {
+	     docker {
+		 image 'maven:3.8.1-adoptopenjdk-11'
+		 args '-v $/var/lib/jenkins/workspace/docker-ansible:/home/ubuntu'
+	     }
 	}
         parameters {
            	 choice(name: 'BranchName', choices:['main','branch01','branch02'], description: 'to refresh the list, go to configure, disable "this build has parameters", launch build (without parameters)to reload the list and stop it, then launch it again (with parameters)')
