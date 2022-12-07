@@ -2,7 +2,7 @@ pipeline{
         agent any
         parameters {
             choice(
-                name: 'main','branch01'
+                name: 'main','branch01','branch02'
                 choices: "${BRANCH_NAMES}",
                 description: 'to refresh the list, go to configure, disable "this build has parameters", launch build (without parameters)to reload the list and stop it, then launch it again (with parameters)'
             )
