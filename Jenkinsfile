@@ -2,13 +2,15 @@ pipeline{
 	agent any
 	parameters {
 		//string(name: 'Project', defaultValue: 'sample project tuesday', description: 'sample project for today')
-		choice(name: 'Branch', choices: ['1.1.0', '1.2.0', '1.3.0'], description: 'select the branch')
+		choice(name: 'Branch', choices: ['main', 'branch01'], description: 'select the branch')
+		
 	}
  
 	stages{
-		stage("Branch"){
-			steps {
-				echo'${Branch} is the branch"
+		stage('Checkout') {
+			steps{
+      			 git branch: 'branch01', credentialsId: '9c2554ea-60d2-4fc7-8612-fb72139b3b89', url: 'https://github.com/manojsubramaniam/test01.git'
+   		
 			}
 		}
 		stage("build docker image"){
