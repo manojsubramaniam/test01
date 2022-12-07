@@ -1,5 +1,5 @@
 pipeline{
-	agent {
+	agent any{
 		docker {
 			 image 'maven:3.8.1-adoptopenjdk-11'
 			 args '-v $/var/lib/jenkins/workspace/docker-ansible:/home/ubuntu'
