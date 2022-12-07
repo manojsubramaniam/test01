@@ -26,7 +26,7 @@ pipeline{
 		}
 		stage("build docker image"){
 		     	steps {
-				sh 'mvn -B clean verify'
+				sh 'Jenkinsfile -B clean verify'
 				echo'building docker image..'
 			}
 		}
