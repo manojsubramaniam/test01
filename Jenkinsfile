@@ -32,10 +32,10 @@ pipeline{
    		
 			}
 		}
-		
+					
 		stage("build docker image"){
 		     	steps {
-				sh 'Jenkinsfile -B clean verify'
+				sh 'docker build -t thetips4you/nodeapp_test:latest .'
 				echo'building docker image..'
 			}
 		}
