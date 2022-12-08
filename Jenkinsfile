@@ -40,8 +40,9 @@ pipeline{
 					
 		stage("build docker image"){
 		     	steps {
-				sh 'docker build -t sample-image/nodeapp_test:latest .'
 				
+				sh 'docker build -t sample-image/nodeapp_test:latest .'
+				sh 'docker-compose up -d --build'
 				echo'building docker image..'
 			}
 		}
