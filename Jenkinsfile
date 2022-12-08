@@ -40,12 +40,8 @@ pipeline{
 					
 		stage("build docker image"){
 		     	steps {
-				script {
-					FROM ubuntu:latest
-					RUN apt-get -y update
-					COPY text.txt .
-				}
-				//sh 'docker build -t mynewimage/nodeapp_test:latest .'
+				sh 'docker build -t sample-image/nodeapp_test:latest .'
+				
 				echo'building docker image..'
 			}
 		}
