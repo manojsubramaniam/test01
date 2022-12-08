@@ -41,7 +41,9 @@ pipeline{
 		stage("build docker image"){
 		     	steps {
 				script {
-					docker.build registry + ":$BUILD_NUMBER"
+					FROM ubuntu:latest
+					RUN apt-get -y update
+					COPY text.txt .
 				}
 				//sh 'docker build -t mynewimage/nodeapp_test:latest .'
 				echo'building docker image..'
