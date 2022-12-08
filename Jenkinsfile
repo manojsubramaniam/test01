@@ -1,5 +1,9 @@
 pipeline{
 	agent any 
+		environment {
+		    registry = "manoj001/trailubuntu"
+		    registryCredential = 'dockerhub'
+		}
 	//{
 	  //   docker {
 	//	 image 'Jenkinsfile'
@@ -36,7 +40,10 @@ pipeline{
 					
 		stage("build docker image"){
 		     	steps {
-				sh 'docker build -t mynewimage/nodeapp_test:latest .'
+				script {
+					docker.build registry + ":$BUILD_NUMBER"
+				}
+				//sh 'docker build -t mynewimage/nodeapp_test:latest .'
 				echo'building docker image..'
 			}
 		}
