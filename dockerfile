@@ -2,7 +2,9 @@ FROM node:latest
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+# COPY package*.json ./
+COPY my_file /etc/important/ 
+# very important!
 
 RUN npm install
 
