@@ -42,7 +42,7 @@ pipeline{
 		     	steps {
 				
 				sh 'docker build -t sample-image/nodeapp_test:latest .'
-				sh 'docker-compose up -d --build'
+				//sh 'docker-compose up -d --build'
 				echo'building docker image..'
 			}
 		}
@@ -52,11 +52,11 @@ pipeline{
 				echo'running docker image into container..'
 			}
 		}
-		stage("restart nginx"){
-			steps {
-				echo'restarting nginx..'
-			}
-		}
+		//stage("restart nginx"){
+		//	steps {
+		//		echo'restarting nginx..'
+		//	}
+		//}
 	
 	}
 }
